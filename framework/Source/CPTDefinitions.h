@@ -10,14 +10,14 @@
  **/
 
 /**
- *  @def __cpt_weak
+ *  @def __weak
  *  @hideinitializer
  *  @brief A custom definition for automatic reference counting (ARC) weak references that falls back to
  *  <code>__unsafe_unretained</code> values on older platforms.
  **/
 
 /**
- *  @def cpt_weak_property
+ *  @def weak
  *  @hideinitializer
  *  @brief A custom definition for automatic reference counting (ARC) weak properties that falls back to
  *  <code>assign</code> on older platforms.
@@ -33,17 +33,6 @@
 #define CPT_SDK_SUPPORTS_WEAK 0
 #endif
 
-#if CPT_SDK_SUPPORTS_WEAK
-#define __cpt_weak        __weak
-#define cpt_weak_property weak
-#else
-#if __clang__ && (__clang_major__ >= 3)
-#define __cpt_weak __unsafe_unretained
-#else
-#define __cpt_weak
-#endif
-#define cpt_weak_property assign
-#endif
 
 // Deprecated method attribute
 
@@ -201,4 +190,4 @@ typedef struct _CPTEdgeInsets {
 }
 CPTEdgeInsets;
 
-extern const CPTEdgeInsets CPTEdgeInsetsZero; ///< Defines a set of stretchable image edge insets where all of the values are zero (@num{0}).
+extern const CPTEdgeInsets CPTEdgeInsetsZero; ///< Defines a set of stretchable image edge insets where all of the values are zero (@enum).

@@ -49,12 +49,12 @@ NSString *const CPTPlotSpaceDisplacementKey = @"CPTPlotSpaceDisplacementKey";
  **/
 @synthesize isDragging;
 
-/** @property __cpt_weak CPTGraph *graph
+/** @property __weak CPTGraph *graph
  *  @brief The graph of the space.
  **/
 @synthesize graph;
 
-/** @property __cpt_weak id<CPTPlotSpaceDelegate> delegate
+/** @property __weak id<CPTPlotSpaceDelegate> delegate
  *  @brief The plot space delegate.
  **/
 @synthesize delegate;
